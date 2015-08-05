@@ -125,6 +125,7 @@ main = hakyll $ do
     atomFeed ["atom.xml"] "posts/*" "feed"
     atomFeed ["hr/atom.xml"] "hr/clanci/*" "feed-hr"
 
+    fourOhFour
 
 --------------------------------------------------------------------------------
 addMathJaxPandoc writerOptions =
