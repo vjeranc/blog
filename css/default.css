@@ -1,0 +1,61 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono);
+@import url(http://fonts.googleapis.com/css?family=Source+Serif+Pro);
+
+body {
+  background-color: #bdbaba;
+  color: #000000;
+  padding: 1em;
+  max-width: 48em;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+.header h1 {
+  font-size: 2em;
+}
+
+.header h1 a {
+  text-decoration: none;
+}
+
+.content {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.1em;
+}
+
+.sourceCode {
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+a {
+  color: #406098;
+}
+
+img {
+  max-width: 100%;
+}
+
+a:visited {
+  color: #1c2a43;
+}
+
+.info {
+  border-bottom:1px solid #000000;
+}
+
+.header {
+  display: inline;
+}
+
+.header > ul {
+  list-style-type: none;
+}
+
+.header > ul > li {
+  display: inline;
+  font-size: 2.2em;
+}
+
+.translation {
+  float: right;
+}

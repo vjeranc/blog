@@ -1,0 +1,6 @@
+---
+permalink: /404.html
+---
+# 404
+
+This page doesn't exist. You can either [go back](javascript:history.back()) or go to [English](/) or [Croatian](/hr/) home page.

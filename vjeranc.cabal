@@ -1,0 +1,28 @@
+name:                vjeranc
+version:             0.1.0.0
+synopsis:            My personal static site
+description:         My personal static site
+homepage:            https://github.com/vjeranc/vjeranc.github.io
+license:             BSD3
+license-file:        LICENSE
+author:              Vjeran Crnjak
+maintainer:          vjeran.crnjak@gmail.com
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+
+executable vjeranc
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , containers
+                     , binary
+                     , hakyll
+                     , pandoc
+                     , filepath
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/vjeranc/vjeranc.github.io

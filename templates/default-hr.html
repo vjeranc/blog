@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="hr" lang="hr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Ante portas - $title$</title>
+  <link rel="stylesheet" type="text/css" href="/css/fontello.css" />
+  <link rel="stylesheet" type="text/css" href="/css/default.css" />
+  <link rel="stylesheet" type="text/css" href="/css/syntax.css" />
+</head>
+<body>
+  <div class="header">
+    <h1><a href="/hr/">Ante portas…</a></h1>
+    <ul>
+      <li><a href="/hr/o-stranici"><i title="O stranici" class="demo-icon icon-info-circled"></i></a></li>
+      <li><a href="/hr/kontakt"><i title="Kontakt" class="demo-icon icon-vcard"></i></a></li>
+      <li><a href="/hr/arhiva"><i title="Arhiva" class="demo-icon icon-archive"></i></a></li>
+      <li><a href="http://github.com/vjeranc"><i title="Github" class="demo-icon icon-github-squared"></i></a></li>
+      <li><a href="/hr/atom.xml"><i title="RSS hranjenje" class="demo-icon icon-rss-squared"></i></a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div>
+      <h1 class="title">$title$</h1>
+      $body$
+    </div>
+  </div>
+  <div class="footer">
+    Stranicu pokreće <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+  </div>
+  $if(mathjax)$
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  $endif$
+</body>
+</html>
