@@ -27,7 +27,7 @@ fonts = do
 aboutNcontact xs template = do
   match (fromList xs) $ do
       route   niceRoute
-      compile $ pandocCompiler
+      compile $ pandocCompilerWith defaultHakyllReaderOptions myWriterOptions
           >>= loadAndApplyTemplate template defaultContext
           >>= prettifyUrl
 
@@ -160,6 +160,7 @@ myWriterOptions = defaultHakyllWriterOptions {
       writerReferenceLinks = True
     , writerHtml5 = True
     , writerHighlight = True
+    , writerEmailObfuscation = JavascriptObfuscation
     }
 
 myWriterOptionsToc :: WriterOptions
