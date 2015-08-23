@@ -1,4 +1,4 @@
-name:                vjeranc
+name:                blog
 version:             0.1.0.0
 synopsis:            My personal static site
 description:         My personal static site
@@ -11,7 +11,7 @@ category:            Web
 build-type:          Simple
 cabal-version:       >=1.10
 
-executable vjeranc
+executable blog
   hs-source-dirs:      src
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
