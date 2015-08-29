@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 stack build
 $(stack path --local-install-root)/bin/blog rebuild
 cp ../vjeranc.github.io/CNAME _site

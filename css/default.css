@@ -1,5 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono);
-@import url(http://fonts.googleapis.com/css?family=Source+Serif+Pro);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono);
 
 body {
   background-color: #bdbaba;
@@ -8,6 +7,32 @@ body {
   max-width: 48em;
   margin: auto;
   font-family: sans-serif;
+}
+
+blockquote {
+  background-color: #D6D2D2;
+  border-radius: 1em;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  font-style: italic;
+}
+
+figure {
+  text-align: center;
+  margin: auto;
+}
+
+figcaption {
+  text-align: left;
+  padding-right: 5em;
+  padding-left: 5em;
+}
+
+hr {
+  border-bottom:1px solid #000000;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
 }
 
 .header h1 {
@@ -19,8 +44,8 @@ body {
 }
 
 .content {
-  font-family: 'Source Serif Pro', serif;
-  font-size: 1.1em;
+  font-family: 'Computer Modern Serif', serif;
+  font-size: 1.2em;
 }
 
 .sourceCode {
@@ -41,6 +66,9 @@ a:visited {
 
 .info {
   border-bottom:1px solid #000000;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
 }
 
 .header {

@@ -20,7 +20,7 @@ cssfiles = do
       route   idRoute
       compile compressCssCompiler
 fonts = do
-  match "font/*" $ do
+  match "font/**" $ do
       route idRoute
       compile copyFileCompiler
 
