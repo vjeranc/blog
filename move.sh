@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 stack build
-$(stack path --local-install-root)/bin/blog rebuild
+./blog-exec.sh rebuild
 cp ../vjeranc.github.io/CNAME _site
 cp ../vjeranc.github.io/README.md _site
 rm -rf ../vjeranc.github.io/*
