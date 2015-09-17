@@ -7,6 +7,11 @@ body {
   font-family: sans-serif;
 }
 
+code {
+  font-family: 'Ubuntu Mono';
+  font-size: 0.9em;
+}
+
 blockquote {
   background-color: #D6D2D2;
   border-radius: 1em;
@@ -44,6 +49,7 @@ hr {
 .content {
   font-family: 'Computer Modern Serif', serif;
   font-size: 1.2em;
+  font-variant-ligatures: common-ligatures;
 }
 
 .sourceCode {
