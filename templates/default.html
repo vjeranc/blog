@@ -47,7 +47,7 @@
     ga('send', 'pageview');
 
   </script>
-
+  $if(code)$
   <script>
   var pre = document.querySelectorAll('pre code'),
       pl = pre.length;
@@ -60,5 +60,6 @@
       }
   }
   </script>
+  $endif$
 </body>
 </html>
