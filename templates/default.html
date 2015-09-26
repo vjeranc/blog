@@ -11,7 +11,6 @@
   <link rel="stylesheet" type="text/css" href="/css/fontello.css" />
   <link rel="stylesheet" type="text/css" href="/css/default.css" />
   <link rel="stylesheet" type="text/css" href="/css/syntax.css" />
-
 </head>
 <body>
   <div class="header">
@@ -47,6 +46,19 @@
     ga('create', 'UA-66919963-1', 'auto');
     ga('send', 'pageview');
 
+  </script>
+
+  <script>
+  var pre = document.querySelectorAll('pre code'),
+      pl = pre.length;
+  for (var i = 0; i < pl; i++) {
+      pre[i].innerHTML = '<span class="line-number"></span>' + pre[i].innerHTML + '<span class="cl"></span>';
+      var num = pre[i].innerHTML.split(/\n/).length;
+      for (var j = 0; j < num; j++) {
+          var line_num = pre[i].getElementsByTagName('span')[0];
+          line_num.innerHTML += '<span class="line">' + (j + 1) + '</span>';
+      }
+  }
   </script>
 </body>
 </html>
