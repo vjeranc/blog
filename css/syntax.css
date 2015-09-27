@@ -1,33 +1,24 @@
-pre {
+table.sourceCode,pre.sourceCode{
     background-color: #ffd8b1;
     border-radius: 1em;
-    padding: 0.5em;
     box-shadow: .1em .1em .5em rgba(0,0,0,.45);
+    display:block;
 }
 
-pre code {
-  display: block;
+td.sourceCode {
+  padding-left:.2em;
 }
 
-pre .line-number {
+pre.sourceCode {
+  padding: 1em;
+}
+
+td.lineNumbers {
   color:black;
-  display:block;
-  opacity:0.5;
-  float:left;
-  margin:0 1em 0 -1em;
+  opacity:.5;
   border-right:1px solid;
   text-align:right;
-}
-
-pre .line-number span {
-  display:block;
-  clear: both;
-  padding: 0 0.5em 0 1em;
-}
-
-pre .cl {
-  display:block;
-  clear:both;
+  padding: 0em .5em 0 .5em;
 }
 
 .sourceCode .kw { color: #268BD2; }
