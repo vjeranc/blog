@@ -2,9 +2,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="hr" lang="hr">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  $if(metadescription)$<meta name="description" content="$metadescription$">$endif$
+  $if(metakeywords)$<meta name="keywords" content="$metakeywords$">$endif$
+  $if(metaauthor)$<meta name="author" content="$metaauthor$">$endif$
   <title>Ante portas - $title$</title>
   <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="/css/cmun-serif.css" />
