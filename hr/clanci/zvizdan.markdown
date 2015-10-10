@@ -45,6 +45,10 @@ Neosnovana, iracionalna mržnja Hrvata prema Srbima i suprotno je samo to, a u
 cijelom svijetu postoji neosnovana i iracionalna mržnja prema mnogim stvarima.
 Prema ljudima druge vjere, prema navijačima drugih nogometnih klubova --
 vjerojatno će vam ipak roditelji dati da oženite ne-Dinamovku -- i sl.
+Zanimljivo je kako su sve priče neovisne o vremenu, bilo prije rata, bilo 20
+godina poslije. Priča iz 2011. izgleda kao da se ništa od 1991. nije
+promijenilo. Nadam se da je u Hrvatskoj situacija drugačija i da ono što danas
+vidimo je manjinsko stajalište.
 
 Sve pohvale ljudima u kinu Europa, redatelju, glumcima, snimateljima i ostaloj
 filmskoj ekipi. Uživao sam!
