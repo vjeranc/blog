@@ -47,4 +47,4 @@ Prema ljudima druge vjere, prema navijačima drugih nogometnih klubova --
 vjerojatno će vam ipak roditelji dati da oženite ne-Dinamovku -- i sl.
 
 Sve pohvale ljudima u kinu Europa, redatelju, glumcima, snimateljima i ostaloj
-ekipi iza filma. Uživao sam!
+filmskoj ekipi. Uživao sam!
