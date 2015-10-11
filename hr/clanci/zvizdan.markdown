@@ -35,9 +35,9 @@ bilo. Možda se *frame rate* filma slučajno poklopio s osvježavanjem projektor
 kojeg koriste ili je netko tamo sposobniji od ekipe u Cinestaru. Uživao sam u
 projekciji u potpunosti.
 
-O filmu nisam apsolutno ništa znao. Rekla mi je žena da je pobrao neke nagrade,
-ali tko zna kakve i tko zna gdje. Svi si dijele nagrade međusobno, tko zna
-vrijedi li to išta.
+O filmu nisam apsolutno ništa znao. Rekla mi je moja lijepa žena da je pobrao
+neke nagrade, ali tko zna kakve i tko zna gdje. Svi si dijele nagrade međusobno,
+tko zna vrijedi li to išta.
 
 Gluma je na kraju ispala izvrsna, već sam naveo fotografiju, a priča zanimljiva
 i relevantna i pomalo univerzalna unatoč već prožvakanoj ratnoj tematici.
