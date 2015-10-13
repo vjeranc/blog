@@ -16,9 +16,18 @@ pre.sourceCode {
 td.lineNumbers {
   color:black;
   opacity:.5;
-  border-right:1px solid;
+  border-right:1px double;
   text-align:right;
   padding: 0em .5em 0 .5em;
+}
+
+.lineNumbers {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .sourceCode .kw { color: #268BD2; }
