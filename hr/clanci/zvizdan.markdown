@@ -4,7 +4,7 @@ date: 2015-10-10
 metakeywords: Zvizdan,film,kino Europa
 metadescription: Doživljaj gledanja filma Zvizdan u kinu Europa.
 metaauthor: Vjeran Crnjak
-metaimage: http://www.dropbox.com/s/04q5xnhapyi2xbn/zvizdan-poster.jpg?raw=1
+metaimage: https://www.dropbox.com/s/04q5xnhapyi2xbn/zvizdan-poster.jpg?raw=1
 ---
 
 *„Još jedan hrvatski film. Još jedno kazalište na ekranu.”* - mislim na putu
