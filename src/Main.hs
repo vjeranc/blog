@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE OverloadedStrings, FlexibleContexts #-}
 import           Data.Monoid (mappend)
 import           Hakyll
 import           Text.Pandoc
@@ -11,27 +11,27 @@ import qualified Data.Set as S
 import           Data.Binary
 import           System.IO.Unsafe
 --------------------------------------------------------------------------------
-images = do
+images =
   match "images/*" $ do
       route   idRoute
       compile copyFileCompiler
-cssfiles = do
+cssfiles =
   match "css/*" $ do
       route   idRoute
       compile compressCssCompiler
-fonts = do
+fonts =
   match "font/**" $ do
       route idRoute
       compile copyFileCompiler
 
-aboutNcontact xs template = do
+aboutNcontact xs template =
   match (fromList xs) $ do
       route   niceRoute
       compile $ pandocCompilerWith defaultHakyllReaderOptions myWriterOptions
           >>= loadAndApplyTemplate template defaultContext
           >>= prettifyUrl
 
-posts path postTemplate defaultTemplate feedSnapshotName = do
+posts path postTemplate defaultTemplate feedSnapshotName =
   match path $ do
       route niceRoute
       compile $ do
@@ -56,7 +56,7 @@ posts path postTemplate defaultTemplate feedSnapshotName = do
           >>= loadAndApplyTemplate defaultTemplate postCtxMath
           >>= prettifyUrl
 
-archive xs postsPath title archiveTemplate defaultTemplate = do
+archive xs postsPath title archiveTemplate defaultTemplate =
   create xs $ do
       route niceRoute
       compile $ do
@@ -71,7 +71,7 @@ archive xs postsPath title archiveTemplate defaultTemplate = do
               >>= loadAndApplyTemplate defaultTemplate archiveCtx
               >>= prettifyUrl
 
-indexPage name title postsPath defaultTemplate = do
+indexPage name title postsPath defaultTemplate =
   match name $ do
     route idRoute
     compile $ do
@@ -86,7 +86,7 @@ indexPage name title postsPath defaultTemplate = do
             >>= loadAndApplyTemplate defaultTemplate indexCtx
             >>= prettifyUrl
 
-atomFeed xs postsPath snapshotName = do
+atomFeed xs postsPath snapshotName =
   create xs $ do
     route idRoute
     compile $ do
@@ -95,7 +95,7 @@ atomFeed xs postsPath snapshotName = do
             loadAllSnapshots postsPath snapshotName
         renderAtom myFeedConfiguration feedCtx posts
 
-fourOhFour = do
+fourOhFour =
   match "404.markdown" $ do
       route   idRoute
       compile copyFileCompiler
@@ -153,7 +153,7 @@ removeIndexHtml item = return $ fmap (withUrls removeIndexStr) item
           case splitFileName url of
             (dir, "index.html") | isLocal dir -> dir
             _                                 -> url
-            where isLocal uri = not (isInfixOf "://" uri)
+            where isLocal uri = not ("://" `isInfixOf` uri)
 --------------------------------------------------------------------------------
 myWriterOptions :: WriterOptions
 myWriterOptions = defaultHakyllWriterOptions {
