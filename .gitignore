@@ -4,3 +4,5 @@ _site
 _cache
 *-draft.md
 dist
+posts/.*
+hr/clanci/.*
