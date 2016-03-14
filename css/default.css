@@ -199,6 +199,15 @@ a:visited {
   float: right;
 }
 
+.footer {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: 3em;
+    border-top: solid 1px;
+}
+
 @media only screen and (max-width: 768px) {
     .content {
         width: 100%;
