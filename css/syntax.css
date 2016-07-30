@@ -3,6 +3,7 @@ table.sourceCode,pre.sourceCode{
     border-radius: 1em;
     box-shadow: .1em .1em .5em rgba(0,0,0,.45);
     display:block;
+    overflow: scroll;
 }
 
 td.sourceCode {
