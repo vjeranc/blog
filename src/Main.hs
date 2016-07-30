@@ -41,7 +41,7 @@ posts path postTemplate defaultTemplate feedSnapshotName =
         let tocWriterSettings =
               case toc of
                 Just "yes" -> myWriterOptionsToc
-                Nothing    -> myWriterOptions
+                _          -> myWriterOptions
         let postCtxMath =
               case mathTex of
                 Just "yes" -> constField "mathjax" "here" `mappend` postCtx

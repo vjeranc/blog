@@ -39,14 +39,15 @@
     Powered by <a href="http://jaspervdj.be/hakyll">Hakyll</a>
   </div>
   $if(mathjax)$
-  <script type="">
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     "HTML-CSS": {
-      preferredFont: "STIX"
+      preferredFont: "STIX",
+      webFont: "STIX-Web"
     }
   });
   </script>
-  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   $endif$
 
   <script>
