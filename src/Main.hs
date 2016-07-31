@@ -10,6 +10,7 @@ import           Data.List (isInfixOf)
 import qualified Data.Set as S
 import           Data.Binary
 import           System.IO.Unsafe
+import           Debug.Trace
 --------------------------------------------------------------------------------
 images =
   match "images/*" $ do
@@ -40,16 +41,16 @@ posts path postTemplate defaultTemplate feedSnapshotName =
         mathTex <- getMetadataField ident "mathjax"
         let tocWriterSettings =
               case toc of
-                Just "yes" -> myWriterOptionsToc
-                _          -> myWriterOptions
+                Just "true" -> myWriterOptionsToc
+                _           -> myWriterOptions
         let postCtxMath =
               case mathTex of
-                Just "yes" -> constField "mathjax" "here" `mappend` postCtx
-                _          -> postCtx
+                Just "true" -> constField "mathjax" "here" `mappend` postCtx
+                _           -> postCtx
         let writerSettings =
               case mathTex of
-                Just "yes" -> addMathJaxPandoc tocWriterSettings
-                _          -> tocWriterSettings
+                Just "true" -> addMathJaxPandoc tocWriterSettings
+                _           -> tocWriterSettings
         pandocCompilerWith defaultHakyllReaderOptions writerSettings
           >>= loadAndApplyTemplate postTemplate    postCtxMath
           >>= saveSnapshot feedSnapshotName
