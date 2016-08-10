@@ -98,8 +98,8 @@ figure {
 
 figcaption {
   text-align: left;
-  padding-right: 5em;
-  padding-left: 5em;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
 hr {
@@ -118,7 +118,7 @@ hr {
 }
 
 .content {
-  font-family: "STIXGeneral","Times New Roman",Times,Baskerville,Georgia,serif;
+  font-family: STIXGeneral,Times,Georgia,serif;
   font-size: 1.2em;
   font-variant-ligatures: common-ligatures;
 }
