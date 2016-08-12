@@ -119,7 +119,7 @@ $\Bigg\lceil\frac{\binom{n}{k}}{\sum_{i=r}^{k}
 
 ### $L(n,k,r)$ as a covering problem
 
-#### Design theory
+#### Combinatorial design theory
 
 ### *Easy* numbers
 
