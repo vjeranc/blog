@@ -4,6 +4,8 @@ date: 2016-09-01
 toc: yes
 code: yes
 mathjax: yes
+references: bib/succeeding-at-lottery.bib
+link-citations: true
 ---
 
 ## Introduction
@@ -124,6 +126,8 @@ $\Bigg\lceil\frac{\binom{n}{k}}{\sum_{i=r}^{k}
 ### *Easy* numbers
 
 ### *Hard* numbers
+
+See [@furedi1996lottery; @colbourn2006handbook].
 
 #### Inclusion-Exclusion principle
 
