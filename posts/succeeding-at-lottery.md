@@ -127,7 +127,8 @@ $\Bigg\lceil\frac{\binom{n}{k}}{\sum_{i=r}^{k}
 
 ### *Hard* numbers
 
-See [@furedi1996lottery; @colbourn2006handbook].
+See [@furedi1996lottery; @colbourn2006handbook; @burger2007towards;
+@etzion1995bounds].
 
 #### Inclusion-Exclusion principle
 
