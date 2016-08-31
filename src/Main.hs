@@ -39,6 +39,8 @@ posts path postTemplate defaultTemplate feedSnapshotName =
         ident <- getUnderlying
         toc   <- getMetadataField ident "toc"
         mathTex <- getMetadataField ident "mathjax"
+        bibtexPath <- getMetadataField ident "references"
+
         let tocWriterSettings =
               case toc of
                 Just "true" -> myWriterOptionsToc
@@ -47,11 +49,15 @@ posts path postTemplate defaultTemplate feedSnapshotName =
               case mathTex of
                 Just "true" -> constField "mathjax" "here" `mappend` postCtx
                 _           -> postCtx
-        let writerSettings =
+        let wopts =
               case mathTex of
                 Just "true" -> addMathJaxPandoc tocWriterSettings
                 _           -> tocWriterSettings
-        pandocCompilerWith defaultHakyllReaderOptions writerSettings
+        let ropts = defaultHakyllReaderOptions
+
+        (case bibtexPath of
+          Just bib -> bibtexCompilerWith ropts wopts bib "elsevier.csl"
+          _        -> pandocCompilerWith ropts wopts)
           >>= loadAndApplyTemplate postTemplate    postCtxMath
           >>= saveSnapshot feedSnapshotName
           >>= loadAndApplyTemplate defaultTemplate postCtxMath
@@ -112,6 +118,9 @@ main = hakyll $ do
     aboutNcontact ["about.rst", "contact.markdown"] "templates/default.html"
     aboutNcontact ["hr/o-stranici.markdown", "hr/kontakt.markdown"] "templates/default-hr.html"
 
+    match "elsevier.csl" $ compile cslCompiler
+    match "bib/*" $ compile biblioCompiler
+
     posts "posts/*" "templates/post.html" "templates/default.html" "feed"
     posts "hr/clanci/*" "templates/post-hr.html" "templates/default-hr.html" "feed-hr"
 
@@ -129,6 +138,14 @@ main = hakyll $ do
     fourOhFour
 
 --------------------------------------------------------------------------------
+bibtexCompilerWith readerOpts writerOpts bibPath cslPath = do
+  csl <- load cslPath
+  bib <- load (fromFilePath bibPath)
+
+  getResourceBody
+    >>= readPandocBiblio readerOpts csl bib
+    >>= return . writePandocWith writerOpts
+
 addMathJaxPandoc writerOptions =
   let mathExtensions = [Ext_tex_math_dollars, Ext_tex_math_double_backslash,
                         Ext_latex_macros]
@@ -139,6 +156,7 @@ addMathJaxPandoc writerOptions =
                           writerHTMLMathMethod = MathJax ""
                         }
   in mathJaxWriterOptions
+
 prettifyUrl :: Item String -> Compiler (Item String)
 prettifyUrl x = relativizeUrls x >>= removeIndexHtml
 
