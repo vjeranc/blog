@@ -8,9 +8,12 @@ import           System.FilePath.Posix  (takeBaseName, takeDirectory, (</>),
                                          splitFileName)
 import           Data.List (isInfixOf)
 import qualified Data.Set as S
+import qualified Data.Map as M
 import           Data.Binary
 import           System.IO.Unsafe
 import           Debug.Trace
+import qualified Text.CSL as CSL
+import           Text.CSL.Pandoc (processCites)
 --------------------------------------------------------------------------------
 images =
   match "images/*" $ do
@@ -138,12 +141,36 @@ main = hakyll $ do
     fourOhFour
 
 --------------------------------------------------------------------------------
+addLinkCitations (Pandoc meta a) =
+  let prevMap = unMeta meta
+      newMap = M.insert "link-citations" (MetaBool True) prevMap
+      newMeta = Meta newMap
+  in  Pandoc newMeta a
+
+myReadPandocBiblio :: ReaderOptions
+                   -> Item CSL
+                   -> Item Biblio
+                   -> Item String
+                   -> Compiler (Item Pandoc)
+myReadPandocBiblio ropt csl biblio item = do
+    -- Parse CSL file, if given
+    style <- unsafeCompiler $ CSL.readCSLFile Nothing . toFilePath . itemIdentifier $ csl
+
+    -- We need to know the citation keys, add then *before* actually parsing the
+    -- actual page. If we don't do this, pandoc won't even consider them
+    -- citations!
+    let Biblio refs = itemBody biblio
+    pandoc <- itemBody <$> readPandocWith ropt item
+    let pandoc' = processCites style refs (addLinkCitations pandoc)
+
+    return $ fmap (const pandoc') item
+
 bibtexCompilerWith readerOpts writerOpts bibPath cslPath = do
   csl <- load cslPath
   bib <- load (fromFilePath bibPath)
 
   getResourceBody
-    >>= readPandocBiblio readerOpts csl bib
+    >>= myReadPandocBiblio readerOpts csl bib
     >>= return . writePandocWith writerOpts
 
 addMathJaxPandoc writerOptions =
