@@ -20,6 +20,7 @@ executable blog
                      , binary
                      , hakyll
                      , pandoc
+                     , pandoc-citeproc
                      , filepath
   default-language:    Haskell2010
 
