@@ -143,7 +143,8 @@ main = hakyll $ do
 --------------------------------------------------------------------------------
 addLinkCitations (Pandoc meta a) =
   let prevMap = unMeta meta
-      newMap = M.insert "link-citations" (MetaBool True) prevMap
+      newMap = M.insert "reference-section-title" (MetaString "Bibliography") $ 
+               M.insert "link-citations" (MetaBool True) prevMap
       newMeta = Meta newMap
   in  Pandoc newMeta a
 
@@ -212,7 +213,7 @@ myWriterOptions = defaultHakyllWriterOptions {
 myWriterOptionsToc :: WriterOptions
 myWriterOptionsToc = myWriterOptions {
       writerTableOfContents = True
-    , writerTOCDepth = 3
+    , writerTOCDepth = 4
     , writerTemplate = "$if(toc)$<div id=\"toc\">$toc$</div>$endif$\n$body$"
     , writerStandalone = True
     }
