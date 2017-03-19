@@ -214,8 +214,7 @@ myWriterOptionsToc :: WriterOptions
 myWriterOptionsToc = myWriterOptions {
       writerTableOfContents = True
     , writerTOCDepth = 4
-    , writerTemplate = "$if(toc)$<div id=\"toc\">$toc$</div>$endif$\n$body$"
-    , writerStandalone = True
+    , writerTemplate = Just "$if(toc)$<div id=\"toc\">$toc$</div>$endif$\n$body$"
     }
 
 myFeedConfiguration :: FeedConfiguration
