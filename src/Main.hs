@@ -178,7 +178,7 @@ addMathJaxPandoc writerOptions =
   let mathExtensions = [Ext_tex_math_dollars, Ext_tex_math_double_backslash,
                         Ext_latex_macros]
       extensions = writerExtensions writerOptions
-      newExtensions = foldr S.insert extensions mathExtensions
+      newExtensions = foldr enableExtension extensions mathExtensions
       mathJaxWriterOptions = writerOptions {
                           writerExtensions = newExtensions,
                           writerHTMLMathMethod = MathJax ""
@@ -205,8 +205,6 @@ removeIndexHtml item = return $ fmap (withUrls removeIndexStr) item
 myWriterOptions :: WriterOptions
 myWriterOptions = defaultHakyllWriterOptions {
       writerReferenceLinks = True
-    , writerHtml5 = True
-    , writerHighlight = True
     , writerEmailObfuscation = JavascriptObfuscation
     }
 
@@ -214,8 +212,11 @@ myWriterOptionsToc :: WriterOptions
 myWriterOptionsToc = myWriterOptions {
       writerTableOfContents = True
     , writerTOCDepth = 4
-    , writerTemplate = Just "$if(toc)$<div id=\"toc\">$toc$</div>$endif$\n$body$"
+    , writerTemplate = Just tocTemplate
     }
+  where tocTemplate = either error id $ either (error . show) id $
+                      runPure $ runWithDefaultPartials $
+                      compileTemplate "" "$if(toc)$<div id=\"toc\">$toc$</div>$endif$\n$body$"
 
 myFeedConfiguration :: FeedConfiguration
 myFeedConfiguration = FeedConfiguration
