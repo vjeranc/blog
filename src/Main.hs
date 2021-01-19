@@ -223,8 +223,8 @@ myFeedConfiguration = FeedConfiguration
     { feedTitle       = "Post feed - Ante portas"
     , feedDescription = "Feed contains Vjeran's blog posts."
     , feedAuthorName  = "Vjeran Crnjak"
-    , feedAuthorEmail = "vjeran.crnjak@gmail.com"
-    , feedRoot        = "http://vjerancrnjak.me"
+    , feedAuthorEmail = "vjeran@crnjak.xyz"
+    , feedRoot        = "https://vjeran.crnjak.xyz"
     }
 
 
